@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Handpoke с нуля — мини-курс</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Playfair+Display:wght@500;700;900&display=swap');
   :root{
     --bg:#ffffff; --bg-soft:#fbf3f3;
     --ink:#1a0e0e; --ink-dim:#7a5a5a;
@@ -21,13 +21,10 @@
 
   /* ---- hero video background ---- */
   .hero-bg{position:fixed;inset:0;z-index:0;overflow:hidden}
-  .hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    filter:grayscale(1) brightness(.5) contrast(1.15)}
+  .hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   /* red + black wash over the black water */
   .hero-bg::after{content:"";position:absolute;inset:0;
-    background:
-      linear-gradient(180deg,rgba(4,6,5,.45),rgba(4,6,5,.72)),
-      radial-gradient(ellipse at 50% 35%,rgba(143,26,26,.28),transparent 65%)}
+    background:linear-gradient(105deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.28) 42%,rgba(0,0,0,.06) 70%,transparent 100%)}
   .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.4;
     background-image:radial-gradient(rgba(255,80,80,.06) 1px,transparent 1.4px);background-size:24px 24px}
 
@@ -38,8 +35,8 @@
 
   header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0 60px;position:relative;z-index:2}
   .eyebrow{font-family:var(--hand);font-size:1.7rem;color:var(--red-bright);transform:rotate(-3deg);display:inline-block;margin-bottom:10px;text-shadow:0 0 22px rgba(255,32,32,.5)}
-  h1.hero{color:#fff;font-family:var(--serif);font-weight:900;font-size:clamp(3.4rem,15vw,11rem);line-height:.86;letter-spacing:-.03em;text-transform:uppercase;text-shadow:0 4px 50px rgba(0,0,0,.6)}
-  h1.hero .drip{display:block;color:var(--red-bright);font-style:italic;font-weight:500;text-transform:none;font-size:clamp(2rem,7vw,5rem);letter-spacing:-.01em;text-shadow:0 0 40px rgba(255,32,32,.5);margin-top:6px}
+  h1.hero{color:#fff;font-family:'Manrope',var(--sans);font-weight:800;text-shadow:0 2px 30px rgba(0,0,0,.85),0 0 4px rgba(0,0,0,.5);font-size:clamp(4rem,17vw,13rem);line-height:.84;letter-spacing:-.04em;text-transform:uppercase}
+  h1.hero .drip{display:block;color:var(--red-bright);font-family:'Manrope',var(--sans);font-style:normal;font-weight:700;text-transform:none;font-size:clamp(2.3rem,8vw,6rem);letter-spacing:-.02em;text-shadow:0 0 40px rgba(255,32,32,.55);margin-top:10px}
   .lede{font-size:clamp(1.05rem,2vw,1.25rem);color:#e9d9d9;max-width:600px;margin:34px 0}
   .cta{display:inline-block;background:var(--red-bright);color:var(--bg);font-weight:600;font-size:1.05rem;padding:17px 44px;border-radius:2px;text-decoration:none;transition:transform .15s,box-shadow .2s,background .2s;box-shadow:0 0 0 rgba(255,32,32,0)}
   .cta:hover{background:var(--red-glow);transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,32,32,.4)}
@@ -66,7 +63,7 @@
 
   .mods{margin-top:20px;border-top:1px solid var(--line)}
   .mod{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:28px 4px;border-bottom:1px solid var(--line);align-items:start}
-  .mod .n{font-family:var(--serif);font-size:1.6rem;color:var(--red-bright);font-style:italic;text-shadow:0 0 12px rgba(255,32,32,.18)}
+  .mod .n{font-family:'Manrope',var(--sans);font-weight:800;font-size:1.5rem;color:var(--red-bright);text-shadow:0 0 12px rgba(255,32,32,.18)}
   .mod h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin-bottom:8px}
   .mod p{color:var(--ink-dim);font-size:1rem;margin:0}
   .mod ul{margin:8px 0 0;padding-left:18px;color:var(--ink-dim);font-size:.94rem}
@@ -109,7 +106,7 @@
     .proof b{font-size:1.6rem}
     .mod{grid-template-columns:44px 1fr;gap:16px}
   }
-  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.cta:hover{transform:none}.hero-bg video{filter:grayscale(1) brightness(.4)}}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.cta:hover{transform:none}.hero-bg video{filter:none}}
 </style>
 </head>
 <body>
