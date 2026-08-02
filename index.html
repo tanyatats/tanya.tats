@@ -16,7 +16,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw}
   ::selection{background:var(--red-bright);color:var(--bg)}
 
   /* ---- hero video background ---- */
@@ -34,8 +34,8 @@
 
   header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0 60px;position:relative;z-index:2}
   .eyebrow{font-family:'Montserrat',var(--sans);font-weight:700;font-size:1.5rem;color:var(--red-bright);letter-spacing:.02em;display:inline-block;margin-bottom:12px}
-  h1.hero{color:#fff;font-family:'Montserrat',var(--sans);font-weight:800;font-size:clamp(4rem,17vw,13rem);line-height:.9;letter-spacing:-.04em;text-transform:uppercase}
-  h1.hero .drip{display:block;color:var(--red-bright);font-family:'Montserrat',var(--sans);font-style:normal;font-weight:700;text-transform:none;font-size:clamp(2.3rem,8vw,6rem);line-height:1.02;letter-spacing:-.02em;margin-top:34px}
+  h1.hero{color:#fff;font-family:'Montserrat',var(--sans);font-weight:800;font-size:clamp(3rem,11vw,8.5rem);line-height:.92;letter-spacing:-.03em;text-transform:uppercase}
+  h1.hero .drip{display:block;color:var(--red-bright);font-family:'Montserrat',var(--sans);font-style:normal;font-weight:700;text-transform:none;font-size:clamp(1.8rem,5.5vw,4rem);line-height:1.05;letter-spacing:-.02em;margin-top:28px}
   .lede{font-size:clamp(1.05rem,2vw,1.25rem);color:#e9d9d9;max-width:600px;margin:34px 0}
   .cta{display:inline-block;background:var(--red-bright);color:var(--bg);font-weight:600;font-size:1.05rem;padding:17px 44px;border-radius:14px;text-decoration:none;transition:transform .15s,box-shadow .2s,background .2s;box-shadow:0 0 0 rgba(255,32,32,0)}
   .cta:hover{background:var(--red-glow);transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,32,32,.4)}
@@ -117,7 +117,7 @@
 <div class="grain"></div>
 
 <header>
-  <div class="wrap narrow">
+  <div class="wrap">
     <span class="eyebrow">tanya.tats</span>
     <h1 class="hero">Handpoke<span class="drip">с нуля до первой работы</span></h1>
     <p class="lede">Мини-курс о ручной технике татуировки — без машинки, без лишней воды. Для тех, кто начинает с нуля, и для тех, кто уже колет и хочет освоить handpoke.</p>
@@ -137,7 +137,7 @@
 </div>
 
 <section>
-  <div class="wrap narrow">
+  <div class="wrap">
     <span class="lbl">для кого это</span>
     <h2>Два пути в одном курсе</h2>
     <div class="who">
@@ -154,7 +154,7 @@
 </section>
 
 <section>
-  <div class="wrap narrow">
+  <div class="wrap">
     <span class="lbl">программа</span>
     <h2>Что внутри</h2>
     <div class="mods">
@@ -191,7 +191,7 @@
 </section>
 
 <section id="preview">
-  <div class="wrap narrow">
+  <div class="wrap">
     <span class="lbl">попробуй бесплатно</span>
     <h2>3 правила, с которых всё начинается</h2>
     <div class="guide">
@@ -207,7 +207,7 @@
 </section>
 
 <section id="buy">
-  <div class="wrap narrow">
+  <div class="wrap">
     <span class="lbl">забрать</span>
     <h2>Мини-курс Handpoke</h2>
     <div class="price-plain">
@@ -226,7 +226,7 @@
 </section>
 
 <section>
-  <div class="wrap narrow">
+  <div class="wrap">
     <span class="lbl">вопросы</span>
     <h2>Коротко о главном</h2>
     <details><summary>Я вообще не умею рисовать. Смогу?</summary><p>Да. Handpoke прощает больше, чем машинка, а простые точечные и линейные работы не требуют академического рисунка. В курсе есть модуль про эскиз с нуля.</p></details>
