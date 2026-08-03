@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2718%27 fill=%27white%27/%3E%3Ctext x=%2750%27 y=%2778%27 font-family=%27Montserrat,Arial,sans-serif%27 font-size=%2792%27 font-weight=%27800%27 fill=%27%23ff2020%27 text-anchor=%27middle%27%3Et%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <title>Handpoke с нуля — мини-курс</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+  
   :root{
     --bg:#ffffff; --bg-soft:#fbf3f3;
     --ink:#1a0e0e; --ink-dim:#7a5a5a;
     --red:#8f1a1a; --red-bright:#ff2020; --red-glow:#ff5c4d; --red-deep:#3b0d0d;
     --line:rgba(180,20,20,.16);
-    --serif:'Montserrat',sans-serif; --hand:'Montserrat',sans-serif;
-    --sans:'Montserrat',-apple-system,system-ui,sans-serif;
+    --serif:'Montserrat','Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif; --hand:'Montserrat','Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif;
+    --sans:'Montserrat','Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -21,8 +22,8 @@
   ::selection{background:var(--red-bright);color:var(--bg)}
 
   /* ---- hero video background ---- */
-  .hero-bg{position:fixed;inset:0;z-index:0;overflow:hidden}
-  .hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;z-index:0;overflow:hidden}
+  .hero-bg video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover}
   /* red + black wash over the black water */
   .hero-bg::after{content:"";position:absolute;inset:0;background:transparent}
   .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.4;
@@ -33,14 +34,14 @@
   /* solid bg on lower sections so text is readable over the fixed video */
   .solid{position:relative;z-index:2;background:#ffffff}
 
-  header{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px;position:relative;z-index:2}
+  header{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px;position:relative;z-index:2}
   .eyebrow{font-family:'Montserrat',var(--sans);font-weight:700;font-size:1.5rem;color:var(--red-bright);letter-spacing:.02em;display:inline-block;margin-bottom:12px}
   h1.hero{color:#fff;font-family:'Montserrat',var(--sans);font-weight:800;font-size:clamp(3rem,11vw,8.5rem);line-height:.92;letter-spacing:-.03em;text-transform:uppercase}
   h1.hero .drip{display:block;color:#fff;font-family:'Montserrat',var(--sans);font-style:normal;font-weight:700;text-transform:none;font-size:clamp(1.8rem,5.5vw,4rem);line-height:1.05;letter-spacing:-.02em;margin-top:28px}
   .lede{font-size:clamp(1.05rem,2vw,1.25rem);color:#e9d9d9;max-width:600px;margin:34px 0}
   .cta{display:inline-block;background:var(--red-bright);color:var(--bg);font-weight:600;font-size:1.05rem;padding:17px 44px;border-radius:14px;text-decoration:none;transition:transform .15s,box-shadow .2s,background .2s;box-shadow:0 0 0 rgba(255,32,32,0)}
   .cta:hover{background:var(--red-glow);transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,32,32,.4)}
-  .cta.ghost{background:transparent;color:var(--red-bright);border:1px solid var(--red)}
+  .cta.ghost{background:transparent;color:var(--red-bright)}
   .cta.ghost:hover{background:rgba(255,32,32,.08);box-shadow:none}
   .under-cta{font-family:var(--serif);font-weight:500;font-size:1rem;color:#e6d0d0;margin-top:16px}
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
@@ -109,13 +110,13 @@
   .prog{display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;margin-top:8px}
   .prog div{padding:12px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:1.02rem}
   .prog span{color:var(--red-bright);font-weight:800;margin-right:12px}
-  .offers{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px}
-  .offer{border:1px solid var(--line);border-radius:18px;padding:30px 26px;position:relative;transition:transform .15s,border-color .2s}
-  .offer:hover{transform:translateY(-3px);border-color:var(--red)}
+  .offers{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px;align-items:stretch}
+  .offer{padding:30px 26px;position:relative;display:flex;flex-direction:column;transition:transform .15s}
+  .offer:hover{transform:translateY(-3px)}
       .oname{font-weight:700;font-size:1.15rem;color:var(--red-bright);margin-bottom:8px}
   .oprice{font-family:var(--serif);font-weight:900;font-size:2.6rem;line-height:1;margin-bottom:14px}
   .oprice span{font-size:1.2rem;color:var(--ink-dim)}
-  .odesc{color:var(--ink-dim);font-size:.98rem;margin-bottom:22px;line-height:1.55}
+  .odesc{color:var(--ink-dim);font-size:.98rem;margin-bottom:22px;line-height:1.55;flex:1}
   .offer .cta{width:100%;text-align:center}
   @media(max-width:640px){.prog{grid-template-columns:1fr}.offers{grid-template-columns:1fr}}
   @media(max-width:640px){
