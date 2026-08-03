@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2718%27 fill=%27white%27/%3E%3Ctext x=%2750%27 y=%2772%27 font-family=%27Montserrat,Arial,sans-serif%27 font-size=%2770%27 font-weight=%27800%27 fill=%27%23ff2020%27 text-anchor=%27middle%27%3Et%3C/text%3E%3C/svg%3E">
 <title>Handpoke с нуля — мини-курс</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
@@ -32,10 +33,10 @@
   /* solid bg on lower sections so text is readable over the fixed video */
   .solid{position:relative;z-index:2;background:#ffffff}
 
-  header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0 60px;position:relative;z-index:2}
+  header{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px;position:relative;z-index:2}
   .eyebrow{font-family:'Montserrat',var(--sans);font-weight:700;font-size:1.5rem;color:var(--red-bright);letter-spacing:.02em;display:inline-block;margin-bottom:12px}
   h1.hero{color:#fff;font-family:'Montserrat',var(--sans);font-weight:800;font-size:clamp(3rem,11vw,8.5rem);line-height:.92;letter-spacing:-.03em;text-transform:uppercase}
-  h1.hero .drip{display:block;color:var(--red-bright);font-family:'Montserrat',var(--sans);font-style:normal;font-weight:700;text-transform:none;font-size:clamp(1.8rem,5.5vw,4rem);line-height:1.05;letter-spacing:-.02em;margin-top:28px}
+  h1.hero .drip{display:block;color:#fff;font-family:'Montserrat',var(--sans);font-style:normal;font-weight:700;text-transform:none;font-size:clamp(1.8rem,5.5vw,4rem);line-height:1.05;letter-spacing:-.02em;margin-top:28px}
   .lede{font-size:clamp(1.05rem,2vw,1.25rem);color:#e9d9d9;max-width:600px;margin:34px 0}
   .cta{display:inline-block;background:var(--red-bright);color:var(--bg);font-weight:600;font-size:1.05rem;padding:17px 44px;border-radius:14px;text-decoration:none;transition:transform .15s,box-shadow .2s,background .2s;box-shadow:0 0 0 rgba(255,32,32,0)}
   .cta:hover{background:var(--red-glow);transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,32,32,.4)}
@@ -45,37 +46,37 @@
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 
   .proof{position:relative;z-index:2;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:center;flex-wrap:wrap;background:#ffffff}
-  .proof div{padding:24px 34px;text-align:center;border-right:1px solid var(--line)}
+  .proof div{padding:18px 30px;text-align:center;border-right:1px solid var(--line)}
   .proof div:last-child{border-right:none}
   .proof b{display:block;font-family:var(--serif);font-size:2.1rem;color:var(--red-bright);line-height:1;text-shadow:0 0 18px rgba(255,32,32,.22)}
   .proof span{font-size:.82rem;color:var(--ink-dim);letter-spacing:.04em}
 
-  section{position:relative;z-index:2;padding:80px 0}
+  section{position:relative;z-index:2;padding:46px 0}
   .lbl{font-family:var(--serif);font-weight:700;font-size:1.15rem;text-transform:lowercase;letter-spacing:.02em;color:var(--red-bright);display:inline-block;margin-bottom:10px;text-shadow:0 0 14px rgba(255,32,32,.2)}
-  h2{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,6vw,3.4rem);line-height:1.02;margin-bottom:24px;letter-spacing:-.01em}
+  h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,4.5vw,2.6rem);line-height:1.04;margin-bottom:16px;letter-spacing:-.01em}
 
-  .who{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:20px}
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:16px}
   .who .card{padding:0}
   
   .who .card h3{font-family:var(--serif);font-weight:700;font-size:1.25rem;margin-bottom:10px;color:var(--red-bright)}
   .who .card p{font-size:.97rem;color:var(--ink-dim);margin:0}
 
-  .mods{margin-top:20px;border-top:1px solid var(--line)}
-  .mod{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:28px 4px;border-bottom:1px solid var(--line);align-items:start}
+  .mods{margin-top:14px;border-top:1px solid var(--line)}
+  .mod{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:20px 4px;border-bottom:1px solid var(--line);align-items:start}
   .mod .n{font-family:'Montserrat',var(--sans);font-weight:800;font-size:1.5rem;color:var(--red-bright);text-shadow:0 0 12px rgba(255,32,32,.18)}
   .mod h3{font-family:var(--serif);font-weight:700;font-size:1.4rem;margin-bottom:8px}
   .mod p{color:var(--ink-dim);font-size:1rem;margin:0}
   .mod ul{margin:8px 0 0;padding-left:18px;color:var(--ink-dim);font-size:.94rem}
   .mod li{margin-bottom:4px}
 
-  .guide{padding:0;margin-top:20px}
+  .guide{padding:0;margin-top:14px}
   .guide h3{font-family:var(--serif);font-weight:700;font-size:1.4rem;color:var(--red-bright);margin-bottom:18px}
   .guide ol{padding-left:22px}
   .guide li{margin-bottom:14px;color:var(--ink-dim)}
   .guide li b{color:var(--ink)}
   .guide .tip{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--red-bright);margin-top:8px}
 
-  .price-plain{text-align:center;margin-top:20px;padding:20px 0}
+  .price-plain{text-align:center;margin-top:16px;padding:10px 0}
   
   
   .price-plain .now{font-family:var(--serif);font-weight:900;font-size:clamp(3rem,10vw,4.2rem);color:var(--red-bright);line-height:1;margin:4px 0 6px;text-shadow:0 0 26px rgba(255,32,32,.2)}
@@ -91,7 +92,7 @@
   details[open] summary::after{transform:rotate(45deg)}
   details p{color:var(--ink-dim);margin-top:12px;font-size:1rem}
 
-  .final{text-align:center;padding:100px 0 110px}
+  .final{text-align:center;padding:56px 0 64px}
   .final h2{margin-bottom:20px}
   .final p{color:var(--ink-dim);max-width:460px;margin:0 auto 32px}
 
@@ -99,6 +100,21 @@
   footer a{color:var(--red-bright);text-decoration:none}
   .sig{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--red-bright);display:block;margin-bottom:6px}
 
+  
+  .prog{display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;margin-top:8px}
+  .prog div{padding:12px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:1.02rem}
+  .prog span{color:var(--red-bright);font-weight:800;margin-right:12px}
+  .offers{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px}
+  .offer{border:1px solid var(--line);border-radius:18px;padding:30px 26px;position:relative;transition:transform .15s,border-color .2s}
+  .offer:hover{transform:translateY(-3px);border-color:var(--red)}
+  .offer.hot{border-color:var(--red-bright);box-shadow:0 10px 50px rgba(255,32,32,.1)}
+  .tagline{position:absolute;top:-12px;left:26px;background:var(--red-bright);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:20px}
+  .oname{font-weight:700;font-size:1.15rem;color:var(--red-bright);margin-bottom:8px}
+  .oprice{font-family:var(--serif);font-weight:900;font-size:2.6rem;line-height:1;margin-bottom:14px}
+  .oprice span{font-size:1.2rem;color:var(--ink-dim)}
+  .odesc{color:var(--ink-dim);font-size:.98rem;margin-bottom:22px;line-height:1.55}
+  .offer .cta{width:100%;text-align:center}
+  @media(max-width:640px){.prog{grid-template-columns:1fr}.offers{grid-template-columns:1fr}}
   @media(max-width:640px){
     .who{grid-template-columns:1fr}
     .proof div{padding:18px 20px}
@@ -123,7 +139,7 @@
     <p class="lede">Мини-курс о ручной технике татуировки — без машинки, без лишней воды. Для тех, кто начинает с нуля, и для тех, кто уже колет и хочет освоить handpoke.</p>
     <div class="hero-cta">
       <a href="#buy" class="cta">Забрать курс</a>
-      <a href="#preview" class="cta ghost">Бесплатный тизер</a>
+      <a href="#buy" class="cta ghost">Смотреть форматы</a>
     </div>
     <div class="under-cta">~2 часа материала · доступ навсегда</div>
   </div>
@@ -156,72 +172,41 @@
 <section>
   <div class="wrap">
     <span class="lbl">программа</span>
-    <h2>Что внутри</h2>
-    <div class="mods">
-      <div class="mod"><div class="n">i</div><div>
-        <h3>Что такое handpoke</h3>
-        <p>История, эстетика, чем ручная техника отличается от машинки и почему заживает иначе.</p>
-      </div></div>
-      <div class="mod"><div class="n">ii</div><div>
-        <h3>Инструмент и материалы</h3>
-        <ul><li>Иглы: размеры, конфигурации, что брать новичку</li><li>Держатели, пигменты, расходники</li><li>Стерильность и организация рабочего места</li></ul>
-      </div></div>
-      <div class="mod"><div class="n">iii</div><div>
-        <h3>Гигиена и безопасность</h3>
-        <p>Перчатки, барьерная защита, утилизация, что можно и категорически нельзя. База, без которой не начинают.</p>
-      </div></div>
-      <div class="mod"><div class="n">iv</div><div>
-        <h3>Техника укола</h3>
-        <ul><li>Хват, угол, глубина</li><li>Ритм и расстояние между точками</li><li>Как читать кожу под иглой</li></ul>
-      </div></div>
-      <div class="mod"><div class="n">v</div><div>
-        <h3>Эскиз и перенос</h3>
-        <p>От идеи к линии, которая хорошо ложится в handpoke. Трансфер, размещение, что упрощать.</p>
-      </div></div>
-      <div class="mod"><div class="n">vi</div><div>
-        <h3>Первая работа и заживление</h3>
-        <p>Порядок действий на сессии, уход после, разбор частых ошибок новичков.</p>
-      </div></div>
-      <div class="mod"><div class="n">vii</div><div>
-        <h3>Первые клиенты</h3>
-        <p>Как собрать портфолио, вести Instagram под handpoke и назначить первую цену без страха.</p>
-      </div></div>
+    <h2>7 модулей — от инструмента до первых клиентов</h2>
+    <div class="prog">
+      <div><span>01</span> Что такое handpoke</div>
+      <div><span>02</span> Инструмент и материалы</div>
+      <div><span>03</span> Гигиена и безопасность</div>
+      <div><span>04</span> Техника укола</div>
+      <div><span>05</span> Эскиз и перенос</div>
+      <div><span>06</span> Первая работа и заживление</div>
+      <div><span>07</span> Первые клиенты</div>
     </div>
   </div>
 </section>
 
-<section id="preview">
-  <div class="wrap">
-    <span class="lbl">попробуй бесплатно</span>
-    <h2>3 правила, с которых всё начинается</h2>
-    <div class="guide">
-      <h3>Мини-гайд из первого модуля</h3>
-      <ol>
-        <li><b>Стерильность важнее красоты.</b> Одноразовая игла, перчатки, барьерная плёнка на всём, к чему прикасаешься. Ни одна линия не стоит инфекции.</li>
-        <li><b>Глубина решает всё.</b> Слишком мелко — пигмент уйдёт, слишком глубоко — расплывётся и будет больно. Handpoke живёт в тонком верхнем слое дермы.</li>
-        <li><b>Ритм, а не скорость.</b> Ровные точки на одинаковом расстоянии дают чистую линию. Спешка — главная ошибка новичка.</li>
-      </ol>
-      <p class="tip">&#8594; дальше в курсе показываю это на практике, с руки</p>
-    </div>
-  </div>
-</section>
+
 
 <section id="buy">
   <div class="wrap">
-    <span class="lbl">забрать</span>
-    <h2>Мини-курс Handpoke</h2>
-    <div class="price-plain">
-      <div class="now">10 000<span class="cur"> &#8381;</span></div>
-      <ul class="incl">
-        <li>7 модулей видео и разборов</li>
-        <li>Чек-лист инструментов и расходников</li>
-        <li>Гайд по стерильности в PDF</li>
-        <li>Доступ навсегда, смотришь в своём темпе</li>
-        <li>Обратная связь по первой работе</li>
-      </ul>
-      <a href="course.html" class="cta">Открыть курс</a>
-      <div class="under-cta">поставь сюда ссылку на оплату</div>
+    <span class="lbl">два формата</span>
+    <h2>Выбери, как учиться</h2>
+    <div class="offers">
+      <div class="offer">
+        <div class="oname">Мини-курс</div>
+        <div class="oprice">10 000<span> ₽</span></div>
+        <div class="odesc">7 текстовых модулей + PDF. Вся база handpoke, учишься сама в своём темпе.</div>
+        <a href="course.html" class="cta">Открыть курс</a>
+      </div>
+      <div class="offer hot">
+        <div class="tagline">со мной лично</div>
+        <div class="oname">Расширенный курс</div>
+        <div class="oprice">50 000<span> ₽</span></div>
+        <div class="odesc">7 дней обучения со мной, работа на живых моделях, постановка руки и разбор твоих работ вживую.</div>
+        <a href="#" class="cta">Записаться</a>
+      </div>
     </div>
+    <div class="under-cta" style="text-align:center;margin-top:18px">поставь ссылки на оплату / запись</div>
   </div>
 </section>
 
