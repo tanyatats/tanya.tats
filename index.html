@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2718%27 fill=%27white%27/%3E%3Ctext x=%2750%27 y=%2772%27 font-family=%27Montserrat,Arial,sans-serif%27 font-size=%2770%27 font-weight=%27800%27 fill=%27%23ff2020%27 text-anchor=%27middle%27%3Et%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2718%27 fill=%27white%27/%3E%3Ctext x=%2750%27 y=%2778%27 font-family=%27Montserrat,Arial,sans-serif%27 font-size=%2792%27 font-weight=%27800%27 fill=%27%23ff2020%27 text-anchor=%27middle%27%3Et%3C/text%3E%3C/svg%3E">
 <title>Handpoke с нуля — мини-курс</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
@@ -98,6 +98,11 @@
 
   footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--ink-dim);font-size:.85rem;position:relative;z-index:2}
   footer a{color:var(--red-bright);text-decoration:none}
+  .fnav{margin:14px 0 10px;font-size:.9rem;line-height:2}
+  .fnav a{color:var(--ink-dim)}
+  .fnav a:hover{color:var(--red-bright)}
+  .fbot{color:var(--ink-dim);font-size:.85rem}
+  .fmeta{max-width:720px;margin:14px auto 0;font-size:11px;line-height:1.5;color:#b8a}
   .sig{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--red-bright);display:block;margin-bottom:6px}
 
   
@@ -107,9 +112,7 @@
   .offers{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px}
   .offer{border:1px solid var(--line);border-radius:18px;padding:30px 26px;position:relative;transition:transform .15s,border-color .2s}
   .offer:hover{transform:translateY(-3px);border-color:var(--red)}
-  .offer.hot{border-color:var(--red-bright);box-shadow:0 10px 50px rgba(255,32,32,.1)}
-  .tagline{position:absolute;top:-12px;left:26px;background:var(--red-bright);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:20px}
-  .oname{font-weight:700;font-size:1.15rem;color:var(--red-bright);margin-bottom:8px}
+      .oname{font-weight:700;font-size:1.15rem;color:var(--red-bright);margin-bottom:8px}
   .oprice{font-family:var(--serif);font-weight:900;font-size:2.6rem;line-height:1;margin-bottom:14px}
   .oprice span{font-size:1.2rem;color:var(--ink-dim)}
   .odesc{color:var(--ink-dim);font-size:.98rem;margin-bottom:22px;line-height:1.55}
@@ -146,11 +149,7 @@
 </header>
 
 <div class="solid">
-<div class="proof">
-  <div><b>7</b><span>модулей</span></div>
-  <div><b>0&#8594;1</b><span>до первой тату</span></div>
-  <div><b>&#8734;</b><span>доступ</span></div>
-</div>
+
 
 <section>
   <div class="wrap">
@@ -195,14 +194,14 @@
       <div class="offer">
         <div class="oname">Мини-курс</div>
         <div class="oprice">10 000<span> ₽</span></div>
-        <div class="odesc">7 текстовых модулей + PDF. Вся база handpoke, учишься сама в своём темпе.</div>
+        <div class="odesc">7 текстовых модулей + PDF. Вся база handpoke, учишься сам(а) в своём темпе.</div>
         <a href="course.html" class="cta">Открыть курс</a>
       </div>
-      <div class="offer hot">
-        <div class="tagline">со мной лично</div>
+      <div class="offer">
+        
         <div class="oname">Расширенный курс</div>
         <div class="oprice">50 000<span> ₽</span></div>
-        <div class="odesc">7 дней обучения со мной, работа на живых моделях, постановка руки и разбор твоих работ вживую.</div>
+        <div class="odesc">7 дней обучения со мной, отработка на реальных моделях, постановка руки и разбор твоих работ вживую.</div>
         <a href="#" class="cta">Записаться</a>
       </div>
     </div>
@@ -232,7 +231,16 @@
 <footer>
   <div class="wrap">
     <span class="sig">до встречи на курсе</span>
-    Handpoke-мини-курс · <a href="#">@твой_инстаграм</a> · 2026
+    <nav class="fnav">
+      <a href="blog.html">Блог</a> ·
+      <a href="course.html">Курс</a> ·
+      <a href="oferta.html">Оферта</a> ·
+      <a href="privacy.html">Политика конфиденциальности</a> ·
+      <a href="contacts.html">Контакты</a> ·
+      <a href="requisites.html">Реквизиты</a>
+    </nav>
+    <div class="fbot">Handpoke-мини-курс · <a href="https://instagram.com/tanya.tats">@tanya.tats</a> · 2026</div>
+    <p class="fmeta">* Instagram принадлежит компании Meta, признанной судом в РФ экстремистской организацией и запрещённой на территории России.</p>
   </div>
 </footer>
 </div>
