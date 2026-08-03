@@ -70,6 +70,41 @@
 </style>
 </head>
 <body>
+<div id="courseGate" style="position:fixed;inset:0;z-index:9999;background:#fff;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:'Montserrat',sans-serif">
+  <div id="gateMsg" style="max-width:440px">
+    <div style="font-weight:800;font-size:1.4rem;margin-bottom:12px;color:#1a0e0e">Проверяем доступ…</div>
+    <div style="color:#6a4a4a">Секунду.</div>
+  </div>
+</div>
+<script>
+  const COURSE_API = "https://tanyatats-course-backend-f204.twc1.net";
+  (async function(){
+    const params = new URLSearchParams(location.search);
+    const token = params.get('t');
+    const gate = document.getElementById('courseGate');
+    const msg = document.getElementById('gateMsg');
+    function deny(html){ msg.innerHTML = html; }
+    if(!token){
+      deny('<div style="font-weight:800;font-size:1.4rem;margin-bottom:12px;color:#1a0e0e">Доступ только после оплаты</div>'+
+           '<div style="color:#6a4a4a;margin-bottom:20px">Эта страница открывается по ссылке из письма, которое приходит после оплаты курса.</div>'+
+           '<a href="index.html#buy" style="display:inline-block;background:#ff2020;color:#fff;font-weight:700;padding:14px 32px;border-radius:12px;text-decoration:none">Купить курс</a>');
+      return;
+    }
+    try{
+      const r = await fetch(COURSE_API + '/api/access/' + encodeURIComponent(token));
+      if(r.ok){
+        gate.style.display='none';  // доступ есть — показываем курс
+      }else{
+        deny('<div style="font-weight:800;font-size:1.4rem;margin-bottom:12px;color:#1a0e0e">Ссылка недействительна</div>'+
+             '<div style="color:#6a4a4a;margin-bottom:20px">Проверьте, что открыли ссылку из письма целиком. Если проблема осталась — напишите нам.</div>'+
+             '<a href="contacts.html" style="display:inline-block;background:#ff2020;color:#fff;font-weight:700;padding:14px 32px;border-radius:12px;text-decoration:none">Контакты</a>');
+      }
+    }catch(e){
+      deny('<div style="font-weight:800;font-size:1.4rem;margin-bottom:12px;color:#1a0e0e">Не удалось проверить доступ</div>'+
+           '<div style="color:#6a4a4a">Обновите страницу или попробуйте позже.</div>');
+    }
+  })();
+</script>
 <div class="top"><div class="wrap"><span class="brand">tanya.tats</span><a href="blog.html" class="back" style="margin-right:18px">Блог</a><a href="index.html" class="back">← на главную</a></div></div>
 
 <div class="chead"><div class="wrap">

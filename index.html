@@ -195,14 +195,14 @@
         <div class="oname">Мини-курс</div>
         <div class="oprice">10 000<span> ₽</span></div>
         <div class="odesc">7 текстовых модулей + PDF. Вся база handpoke, учишься сам(а) в своём темпе.</div>
-        <a href="https://yookassa.ru/my/i/anBVQ8yw3byi/l" class="cta" target="_blank" rel="noopener">Купить курс</a>
+        <button type="button" class="cta paybtn" onclick="openPay('mini')">Купить курс</button>
       </div>
       <div class="offer">
         
         <div class="oname">Расширенный курс</div>
         <div class="oprice">50 000<span> ₽</span></div>
         <div class="odesc">7 дней обучения со мной, отработка на реальных моделях, постановка руки и разбор твоих работ вживую.</div>
-        <a href="https://yookassa.ru/my/i/anBVlgodxKAc/l" class="cta" target="_blank" rel="noopener">Записаться</a>
+        <button type="button" class="cta paybtn" onclick="openPay('extended')">Записаться</button>
       </div>
     </div>
     <div class="under-cta" style="text-align:center;margin-top:18px">поставь ссылки на оплату / запись</div>
@@ -243,6 +243,88 @@
     <p class="fmeta">* Instagram принадлежит компании Meta, признанной судом в РФ экстремистской организацией и запрещённой на территории России.</p>
   </div>
 </footer>
+
+<!-- Модалка оплаты -->
+<div id="payModal" class="pay-overlay" onclick="if(event.target===this)closePay()">
+  <div class="pay-box">
+    <button class="pay-close" onclick="closePay()">&times;</button>
+    <div class="pay-title" id="payTitle">Оформление</div>
+    <div class="pay-sub" id="paySub"></div>
+    <label class="pay-label">Ваш email — на него придёт курс</label>
+    <input type="email" id="payEmail" class="pay-input" placeholder="you@example.com" autocomplete="email">
+    <div class="pay-err" id="payErr"></div>
+    <button class="cta pay-go" id="payGo" onclick="submitPay()">Перейти к оплате</button>
+    <div class="pay-note">После оплаты материалы придут на почту автоматически</div>
+  </div>
+</div>
+
+<style>
+  .pay-overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(10,4,4,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}
+  .pay-overlay.open{display:flex}
+  .pay-box{background:#fff;border-radius:20px;max-width:420px;width:100%;padding:34px 30px;position:relative;box-shadow:0 20px 80px rgba(0,0,0,.3)}
+  .pay-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.8rem;line-height:1;color:var(--ink-dim);cursor:pointer}
+  .pay-close:hover{color:var(--red-bright)}
+  .pay-title{font-weight:800;font-size:1.5rem;margin-bottom:4px}
+  .pay-sub{color:var(--ink-dim);margin-bottom:22px;font-size:1rem}
+  .pay-label{display:block;font-weight:600;font-size:.9rem;margin-bottom:8px}
+  .pay-input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:1rem;outline:none}
+  .pay-input:focus{border-color:var(--red-bright)}
+  .pay-err{color:var(--red-bright);font-size:.88rem;min-height:18px;margin:8px 0}
+  .pay-go{width:100%;text-align:center;border:none;cursor:pointer}
+  .pay-go:disabled{opacity:.6;cursor:default}
+  .pay-note{text-align:center;color:var(--ink-dim);font-size:.85rem;margin-top:14px}
+</style>
+
+<script>
+  // адрес бэкенда курса
+  const COURSE_API = "https://tanyatats-course-backend-f204.twc1.net";
+  const PRODUCTS = {
+    mini:     {title:"Мини-курс handpoke",     sub:"10 000 ₽ · доступ навсегда + PDF"},
+    extended: {title:"Расширенный курс handpoke", sub:"50 000 ₽ · 7 дней со мной + модели"}
+  };
+  let currentProduct = null;
+
+  function openPay(product){
+    currentProduct = product;
+    const p = PRODUCTS[product];
+    document.getElementById('payTitle').textContent = p.title;
+    document.getElementById('paySub').textContent = p.sub;
+    document.getElementById('payErr').textContent = '';
+    document.getElementById('payEmail').value = '';
+    document.getElementById('payModal').classList.add('open');
+    setTimeout(()=>document.getElementById('payEmail').focus(), 100);
+  }
+  function closePay(){
+    document.getElementById('payModal').classList.remove('open');
+  }
+  async function submitPay(){
+    const email = document.getElementById('payEmail').value.trim();
+    const err = document.getElementById('payErr');
+    const go = document.getElementById('payGo');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      err.textContent = 'Введите корректный email'; return;
+    }
+    err.textContent = '';
+    go.disabled = true; go.textContent = 'Создаём платёж…';
+    try{
+      const r = await fetch(COURSE_API + '/api/pay', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({product: currentProduct, email})
+      });
+      const data = await r.json();
+      if(r.ok && data.confirmation_url){
+        window.location.href = data.confirmation_url;
+      }else{
+        err.textContent = data.detail || 'Не удалось создать платёж. Попробуйте позже.';
+        go.disabled = false; go.textContent = 'Перейти к оплате';
+      }
+    }catch(e){
+      err.textContent = 'Ошибка сети. Проверьте соединение.';
+      go.disabled = false; go.textContent = 'Перейти к оплате';
+    }
+  }
+</script>
 </div>
 </body>
 </html>
