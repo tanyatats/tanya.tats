@@ -27,3 +27,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 4. Если обводка портит мелкий текст – ограничьте её только крупными элементами */
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('*').forEach(function(el) {
+    const style = window.getComputedStyle(el);
+    if (style.fontFamily.includes('Montserrat')) {
+      el.style.fontWeight = '900';
+      el.style.fontFamily = 'Montserrat, Arial Black, sans-serif';
+    }
+  });
+});
