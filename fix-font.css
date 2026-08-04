@@ -1,7 +1,7 @@
 /* Полная замена на системный шрифт – работает везде */
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif !important;
-  font-weight: 700 !important; /* можно поставить 600 или 700 – системные хорошо поддерживают */
+  font-weight: 600 !important; /* можно поставить 600 или 700 – системные хорошо поддерживают */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
