@@ -1,38 +1,7 @@
-/* fix-font.css – универсальное решение для жирности Montserrat во всех браузерах */
-
-/* 1. Принудительно задаём максимальную жирность для всех элементов, где используется Montserrat */
+/* Полная замена на системный шрифт – работает везде */
 * {
-  font-family:'Arial Black', sans-serif;
-  font-weight: 700 !important; /* 900 – самый жирный вариант */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 700 !important; /* можно поставить 600 или 700 – системные хорошо поддерживают */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
-
-/* 2. Если хотите, чтобы обычный текст (параграфы, мелкие кнопки) не был слишком жирным,
-   то раскомментируйте строки ниже и закомментируйте правило выше для * (или оставьте только для заголовков) */
-/*
-h1, h2, h3, h4, h5, h6, .title, .heading, .menu-item, .button {
-  font-weight: 900 !important;
-}
-p, span, div, li {
-  font-weight: 600 !important; /* или 700 – на ваш вкус */
-}
-*/
-
-/* 3. Дополнительная лёгкая обводка для плотности (особенно полезна для заголовков) */
-h1, h2, h3, h4, h5, h6 {
-  -webkit-text-stroke: 0.3px currentColor;
-  text-stroke: 0.3px currentColor;
-}
-
-/* 4. Если обводка портит мелкий текст – ограничьте её только крупными элементами */
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('*').forEach(function(el) {
-    const style = window.getComputedStyle(el);
-    if (style.fontFamily.includes('Arial Black')) {
-      el.style.fontWeight = '900';
-      el.style.fontFamily = 'Arial Black, sans-serif';
-    }
-  });
-});
