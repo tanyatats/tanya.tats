@@ -3,7 +3,7 @@
 /* 1. Принудительно задаём максимальную жирность для всех элементов, где используется Montserrat */
 * {
   font-family: 'Montserrat', 'Arial Black', sans-serif;
-  font-weight: 900 !important; /* 900 – самый жирный вариант */
+  font-weight: 700 !important; /* 900 – самый жирный вариант */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
