@@ -21,14 +21,22 @@
 <meta name="twitter:title" content="Хендпоук с нуля — курс от tanya.tats">
 <meta name="twitter:description" content="Ручная техника татуировки с нуля до первой работы. Курс от практикующего мастера.">
 <meta name="twitter:image" content="https://tanyatats.ru/og-image.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/fix-font.css">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<style>
+@font-face{font-family:'Montserrat';font-weight:400;font-style:normal;font-display:swap;src:url('/fonts/montserrat-400.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:500;font-style:normal;font-display:swap;src:url('/fonts/montserrat-500.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:600;font-style:normal;font-display:swap;src:url('/fonts/montserrat-600.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:700;font-style:normal;font-display:swap;src:url('/fonts/montserrat-700.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:800;font-style:normal;font-display:swap;src:url('/fonts/montserrat-800.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-weight:900;font-style:normal;font-display:swap;src:url('/fonts/montserrat-900.woff2') format('woff2')}
+</style>
+<link rel="preload" href="/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin>
 <title>Handpoke с нуля — мини-курс</title>
 <style>
   
@@ -37,7 +45,7 @@
     --ink:#1a0e0e; --ink-dim:#7a5a5a;
     --red:#8f1a1a; --red-bright:#ff2020; --red-glow:#ff5c4d; --red-deep:#3b0d0d;
     --line:rgba(180,20,20,.16);
-    --serif:'Montserrat','Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif; --hand:'Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif;
+    --serif:'Montserrat','Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif; --hand:'Montserrat','Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif;
     --sans:'Montserrat','Helvetica Neue','Segoe UI',Roboto,Arial,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -46,7 +54,7 @@
   ::selection{background:var(--red-bright);color:var(--bg)}
 
   /* ---- hero video background ---- */
-  .hero-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;z-index:0;overflow:hidden}
+  .hero-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;z-index:0;overflow:hidden;background:#1a1210 url('hero-poster.jpg') center/cover no-repeat}
   .hero-bg video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover}
   /* red + black wash over the black water */
   .hero-bg::after{content:"";position:absolute;inset:0;background:transparent}
@@ -166,11 +174,31 @@
 </head>
 <body>
 <div class="hero-bg">
-  <video autoplay muted loop playsinline poster="">
+  <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="hero-poster.jpg" disablepictureinpicture>
     <source src="water.mp4" type="video/mp4">
   </video>
 </div>
 <div class="grain"></div>
+<script>
+  // Надёжный автозапуск фонового видео на мобильных (iOS/Android блокируют autoplay без явного play())
+  (function(){
+    var v = document.getElementById('heroVideo');
+    if(!v) return;
+    v.muted = true;               // обязательно для autoplay на мобильных
+    v.setAttribute('muted','');
+    v.playsInline = true;
+    function tryPlay(){
+      var p = v.play();
+      if(p && p.catch){ p.catch(function(){ /* если заблокировано — постер останется фоном */ }); }
+    }
+    tryPlay();
+    // повторные попытки: после загрузки данных и при первом касании экрана
+    v.addEventListener('loadeddata', tryPlay);
+    v.addEventListener('canplay', tryPlay);
+    document.addEventListener('touchstart', tryPlay, {once:true, passive:true});
+    document.addEventListener('click', tryPlay, {once:true});
+  })();
+</script>
 
 <header>
   <div class="wrap">
@@ -242,6 +270,7 @@
         <button type="button" class="cta paybtn" onclick="openPay('extended')">Записаться</button>
       </div>
     </div>
+    <div class="under-cta" style="text-align:center;margin-top:18px">поставь ссылки на оплату / запись</div>
   </div>
 </section>
 
@@ -275,7 +304,7 @@
       <a href="contacts.html">Контакты</a> ·
       <a href="requisites.html">Реквизиты</a>
     </nav>
-    <div class="fbot">Handpoke · <a href="https://instagram.com/tanya.tats">@tanya.tats</a> · 2026</div>
+    <div class="fbot">Handpoke-мини-курс · <a href="https://instagram.com/tanya.tats">@tanya.tats</a> · 2026</div>
     <p class="fmeta">* Instagram принадлежит компании Meta, признанной судом в РФ экстремистской организацией и запрещённой на территории России.</p>
   </div>
 </footer>
@@ -362,5 +391,18 @@
   }
 </script>
 </div>
+<script>
+  (function(){
+    var v = document.getElementById('heroVideo');
+    if(!v) return;
+    v.muted = true; v.setAttribute('muted','');
+    var tryPlay = function(){ var p = v.play(); if(p && p.catch) p.catch(function(){}); };
+    tryPlay();
+    // повтор при первом касании/скролле — на случай строгих браузеров
+    ['touchstart','click','scroll'].forEach(function(e){
+      document.addEventListener(e, tryPlay, {once:true, passive:true});
+    });
+  })();
+</script>
 </body>
 </html>
