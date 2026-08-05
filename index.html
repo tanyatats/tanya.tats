@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="yandex-verification" content="ab66ae9f76529d10" />
-<meta name="description" content="Курс по хендпоук тату (handpoke) от tanya.tats — ручная техника татуировки с нуля до первой работы. 7 модулей: инструмент, стерильность, техника укола, эскиз, первые клиенты. базовый курс и индивидуальный курс с мастером.">
+<meta name="description" content="Курс по хендпоук тату (handpoke) от tanya.tats — ручная техника татуировки с нуля до первой работы. 7 модулей: инструмент, стерильность, техника укола, эскиз, первые клиенты. Мини-курс и обучение лично с мастером.">
 <meta name="keywords" content="хендпоук, handpoke, хендпоук тату, ручная техника татуировки, обучение тату, курс тату, техника хендпоук, как делать тату хендпоуком, тату мастер, stick and poke">
 <meta name="author" content="tanya.tats">
 <meta name="robots" content="index, follow">
@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://tanyatats.ru/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Хендпоук с нуля — курс от tanya.tats">
-<meta property="og:description" content="Ручная техника татуировки с нуля до первой работы. Базовый курс и индивидуальное обучение: инструмент, стерильность, техника, первые клиенты.">
+<meta property="og:description" content="Ручная техника татуировки с нуля до первой работы. Мини-курс и обучение лично с мастером: инструмент, стерильность, техника, первые клиенты.">
 <meta property="og:image" content="https://tanyatats.ru/og-image.jpg">
 <meta property="og:url" content="https://tanyatats.ru/">
 <meta property="og:site_name" content="tanya.tats">
@@ -34,10 +34,24 @@
 @font-face{font-family:'Montserrat';font-weight:700;font-style:normal;font-display:swap;src:url('/fonts/montserrat-700.woff2') format('woff2')}
 @font-face{font-family:'Montserrat';font-weight:800;font-style:normal;font-display:swap;src:url('/fonts/montserrat-800.woff2') format('woff2')}
 @font-face{font-family:'Montserrat';font-weight:900;font-style:normal;font-display:swap;src:url('/fonts/montserrat-900.woff2') format('woff2')}
+
+  .blogsec{padding:70px 0;border-top:1px solid var(--line)}
+  .blogsec h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:6px 0 8px}
+  .blogsub{color:var(--ink-dim);font-size:1.05rem;margin-bottom:32px;max-width:560px}
+  .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px}
+  .bcard{display:block;padding:26px 26px;border-radius:18px;background:#fbf5f5;text-decoration:none;color:var(--ink);transition:transform .15s}
+  .bcard:hover{transform:translateY(-3px)}
+  .bcard h3{font-size:1.2rem;font-weight:800;margin-bottom:8px;line-height:1.25}
+  .bcard p{color:var(--ink-dim);font-size:.96rem;margin-bottom:12px;line-height:1.5}
+  .bmore{color:var(--red-bright);font-weight:700;font-size:.9rem}
+  .balllink{display:inline-block;color:var(--red-bright);font-weight:700;font-size:1.02rem;text-decoration:none}
+  .balllink:hover{text-decoration:underline}
+  @media(max-width:640px){.bgrid{grid-template-columns:1fr}}
+
 </style>
 <link rel="preload" href="/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin>
-<title>Handpoke с нуля — базовый курс</title>
+<title>Handpoke с нуля — мини-курс</title>
 <style>
   
   :root{
@@ -207,8 +221,9 @@
     <p class="lede">Обучение ручной технике татуировки — без машинки, без лишней воды. Два формата на выбор: изучить самому или пройти путь лично со мной.</p>
     <div class="hero-cta">
       <a href="#buy" class="cta">Выбрать формат</a>
+      <a href="#buy" class="cta ghost">Два курса →</a>
     </div>
-    <div class="under-cta">базовый курс 10 000 ₽ · индивидуальный курс 50 000 ₽</div>
+    <div class="under-cta">мини-курс 10 000 ₽ · расширенный со мной 50 000 ₽</div>
   </div>
 </header>
 
@@ -256,19 +271,20 @@
     <h2>Выбери свой путь в handpoke</h2>
     <div class="offers">
       <div class="offer">
-        <div class="oname">базовый курс</div>
+        <div class="oname">Мини-курс</div>
         <div class="oprice">10 000<span> ₽</span></div>
         <div class="odesc">9 модулей + PDF: вся база handpoke, история, анатомия кожи, техника. Плюс 2 личные видеоконсультации со мной. Учишься сам(а) в своём темпе.</div>
         <button type="button" class="cta paybtn" onclick="openPay('mini')">Купить курс</button>
       </div>
       <div class="offer">
         
-        <div class="oname">индивидуальный курс</div>
+        <div class="oname">Расширенный курс</div>
         <div class="oprice">50 000<span> ₽</span></div>
-        <div class="odesc">Все материалы базового курса полностью + 7 дней обучения лично со мной: отработка на реальных моделях, постановка руки и разбор твоих работ вживую.</div>
+        <div class="odesc">Все материалы мини-курса полностью + 7 дней обучения лично со мной: отработка на реальных моделях, постановка руки и разбор твоих работ вживую.</div>
         <button type="button" class="cta paybtn" onclick="openPay('extended')">Записаться</button>
       </div>
     </div>
+    <div class="under-cta" style="text-align:center;margin-top:18px">поставь ссылки на оплату / запись</div>
   </div>
 </section>
 
@@ -280,6 +296,38 @@
     <details><summary>У меня нет оборудования, что нужно купить?</summary><p>К курсу идёт чек-лист: минимальный набор для старта стоит недорого. Всё расписано — что брать, где и почему.</p></details>
     <details><summary>Я уже колю машинкой. Не будет ли скучно?</summary><p>Нет. Базу можно пролистать, а основная ценность для тебя — в технике укола, глубине и ритме руки, которых в машинной работе нет.</p></details>
     <details><summary>Как проходит обучение?</summary><p>Видео и разборы, которые смотришь в своём темпе. Доступ остаётся навсегда, можно возвращаться к модулям.</p></details>
+  </div>
+</section>
+
+
+<section class="blogsec">
+  <div class="wrap">
+    <span class="lbl">блог</span>
+    <h2>Полезное о хендпоуке</h2>
+    <p class="blogsub">Разбираю технику, ошибки новичков и всё, что важно знать до первой тату.</p>
+    <div class="bgrid">
+      <a class="bcard" href="blog-chto-takoe-handpoke.html">
+        <h3>Что такое хендпоук и чем отличается от машинки</h3>
+        <p>Ручная техника без машинки: что это и кому подходит.</p>
+        <span class="bmore">Читать →</span>
+      </a>
+      <a class="bcard" href="blog-bolno-li-handpoke.html">
+        <h3>Больно ли делать хендпоук и как заживает</h3>
+        <p>Честно про ощущения, заживление и уход.</p>
+        <span class="bmore">Читать →</span>
+      </a>
+      <a class="bcard" href="blog-kak-podobrat-eskiz.html">
+        <h3>Как подобрать эскиз для хендпоука</h3>
+        <p>Что хорошо ложится в ручную технику, а что нет.</p>
+        <span class="bmore">Читать →</span>
+      </a>
+      <a class="bcard" href="blog-kak-stat-masterom.html">
+        <h3>Как стать мастером хендпоук с нуля</h3>
+        <p>Пошаговый путь от теории до первых клиентов.</p>
+        <span class="bmore">Читать →</span>
+      </a>
+    </div>
+    <a href="blog.html" class="balllink">Все статьи →</a>
   </div>
 </section>
 
@@ -302,7 +350,7 @@
       <a href="contacts.html">Контакты</a> ·
       <a href="requisites.html">Реквизиты</a>
     </nav>
-    <div class="fbot">Handpoke · <a href="https://instagram.com/tanya.tats">@tanya.tats</a> · 2026</div>
+    <div class="fbot">Handpoke-мини-курс · <a href="https://instagram.com/tanya.tats">@tanya.tats</a> · 2026</div>
     <p class="fmeta">* Instagram принадлежит компании Meta, признанной судом в РФ экстремистской организацией и запрещённой на территории России.</p>
   </div>
 </footer>
@@ -342,8 +390,8 @@
   // адрес бэкенда курса
   const COURSE_API = "https://tanyatats-course-backend-f204.twc1.net";
   const PRODUCTS = {
-    mini:     {title:"базовый курс handpoke",     sub:"10 000 ₽ · доступ навсегда + PDF"},
-    extended: {title:"индивидуальный курс handpoke", sub:"50 000 ₽ · 7 дней со мной + модели"}
+    mini:     {title:"Мини-курс handpoke",     sub:"10 000 ₽ · доступ навсегда + PDF"},
+    extended: {title:"Расширенный курс handpoke", sub:"50 000 ₽ · 7 дней со мной + модели"}
   };
   let currentProduct = null;
 
