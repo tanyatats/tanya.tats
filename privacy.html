@@ -107,8 +107,10 @@
 <h2>6. Ваши права</h2>
 <p>Вы вправе запросить доступ к своим данным, их исправление или удаление, а также отозвать согласие на обработку, направив запрос на tzhighalkina80@gmail.com. Отзыв согласия не влияет на уже оказанные услуги.</p>
 
-<h2>7. Файлы cookie</h2>
-<p>Сайт может использовать cookie и системы аналитики для улучшения работы. Вы можете отключить cookie в настройках браузера.</p>
+<h2>7. Файлы cookie и аналитика</h2>
+<p>Сайт использует файлы cookie — небольшие текстовые файлы, которые сохраняются в браузере и помогают сайту работать корректно, запоминать ваши действия и улучшать удобство использования.</p>
+<p>Для сбора обезличенной статистики посещений сайт использует сервис <b>Яндекс.Метрика</b> (принадлежит ООО «Яндекс»). Метрика собирает данные о посещениях (источник перехода, просмотренные страницы, действия на сайте, тип устройства и браузера) в обезличенном виде и помогает понять, как посетители пользуются сайтом. Обработка этих данных осуществляется на условиях Яндекса.</p>
+<p>Продолжая пользоваться сайтом, вы соглашаетесь на использование cookie и обработку данных сервисом аналитики. Вы можете отключить cookie в настройках своего браузера, однако это может повлиять на корректность работы сайта.</p>
 
 <h2>8. Изменения политики</h2>
 <p>Оператор вправе обновлять Политику. Актуальная редакция всегда размещена на этой странице.</p>
@@ -117,5 +119,32 @@
 
 </div></div>
 <footer><div class="wrap"><a href="index.html">Главная</a> · <a href="blog.html">Блог</a> · <a href="oferta.html">Оферта</a> · <a href="privacy.html">Политика конфиденциальности</a> · <a href="contacts.html">Контакты</a> · <a href="requisites.html">Реквизиты</a><p class="meta">* Instagram принадлежит компании Meta, признанной судом в РФ экстремистской организацией и запрещённой на территории России.</p></div></footer>
+<!-- Cookie banner -->
+<div id="cookieBanner" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:9998;max-width:560px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.18);padding:20px 22px;font-family:'Montserrat',-apple-system,sans-serif">
+  <div style="font-size:.92rem;line-height:1.55;color:#3a2a2a;margin-bottom:14px">
+    мы используем файлы cookie и сервис Яндекс.Метрика, чтобы сайт работал корректно и удобно. продолжая пользоваться сайтом, вы соглашаетесь с этим. подробнее — в <a href="privacy.html" style="color:#ff2020;text-decoration:none;font-weight:600">политике конфиденциальности</a>.
+  </div>
+  <button onclick="acceptCookies()" style="background:#ff2020;color:#fff;border:none;border-radius:10px;padding:11px 26px;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer">принять</button>
+</div>
+<script>
+  (function(){
+    try{
+      if(!localStorage.getItem('cookiesAccepted')){
+        var b=document.getElementById('cookieBanner');
+        if(b) b.style.display='block';
+      }
+    }catch(e){
+      var b=document.getElementById('cookieBanner');
+      if(b) b.style.display='block';
+    }
+  })();
+  function acceptCookies(){
+    try{ localStorage.setItem('cookiesAccepted','1'); }catch(e){}
+    var b=document.getElementById('cookieBanner');
+    if(b) b.style.display='none';
+  }
+</script>
+<!-- /Cookie banner -->
+
 </body>
 </html>
