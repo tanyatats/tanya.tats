@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://tanyatats.ru/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Хендпоук с нуля — курс от tanya.tats">
-<meta property="og:description" content="Ручная техника татуировки с нуля до первой работы. Мини-курс и обучение лично с мастером: инструмент, стерильность, техника, первые клиенты.">
+<meta property="og:description" content="Ручная техника татуировки с нуля до первой работы. базовый курс и обучение лично с мастером: инструмент, стерильность, техника, первые клиенты.">
 <meta property="og:image" content="https://tanyatats.ru/og-image.jpg">
 <meta property="og:url" content="https://tanyatats.ru/">
 <meta property="og:site_name" content="tanya.tats">
@@ -37,7 +37,7 @@
 </style>
 <link rel="preload" href="/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin>
-<title>Handpoke с нуля — мини-курс</title>
+<title>Handpoke с нуля — базовый курс </title>
 <style>
   
   :root{
@@ -209,7 +209,7 @@
       <a href="#buy" class="cta">Выбрать формат</a>
       <a href="#buy" class="cta ghost">Два курса →</a>
     </div>
-    <div class="under-cta">мини-курс 10 000 ₽ · расширенный со мной 50 000 ₽</div>
+    <div class="under-cta">базовый курс 10 000 ₽ · индивидуальный 50 000 ₽</div>
   </div>
 </header>
 
@@ -257,7 +257,7 @@
     <h2>Выбери свой путь в handpoke</h2>
     <div class="offers">
       <div class="offer">
-        <div class="oname">Мини-курс</div>
+        <div class="oname">базовый курс</div>
         <div class="oprice">10 000<span> ₽</span></div>
         <div class="odesc">9 модулей + PDF: вся база handpoke, история, анатомия кожи, техника. Плюс 2 личные видеоконсультации со мной. Учишься сам(а) в своём темпе.</div>
         <button type="button" class="cta paybtn" onclick="openPay('mini')">Купить курс</button>
@@ -266,7 +266,7 @@
         
         <div class="oname">Расширенный курс</div>
         <div class="oprice">50 000<span> ₽</span></div>
-        <div class="odesc">Все материалы мини-курса полностью + 7 дней обучения лично со мной: отработка на реальных моделях, постановка руки и разбор твоих работ вживую.</div>
+        <div class="odesc">Все материалы базового курса полностью + 7 дней обучения лично со мной: отработка на реальных моделях, постановка руки и разбор твоих работ вживую.</div>
         <button type="button" class="cta paybtn" onclick="openPay('extended')">Записаться</button>
       </div>
     </div>
@@ -344,8 +344,8 @@
   // адрес бэкенда курса
   const COURSE_API = "https://tanyatats-course-backend-f204.twc1.net";
   const PRODUCTS = {
-    mini:     {title:"Мини-курс handpoke",     sub:"10 000 ₽ · доступ навсегда + PDF"},
-    extended: {title:"Расширенный курс handpoke", sub:"50 000 ₽ · 7 дней со мной + модели"}
+    mini:     {title:"Базовый курс handpoke",     sub:"10 000 ₽ · доступ навсегда + PDF"},
+    extended: {title:"Индивидуальный", sub:"50 000 ₽ · 7 дней со мной + модели"}
   };
   let currentProduct = null;
 
